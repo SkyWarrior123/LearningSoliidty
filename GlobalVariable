@@ -1,0 +1,12 @@
+//SPDX-License-Identifier: UNLICENSED
+
+pragma solidity ^0.8.8;
+
+contract GlobalVariable {
+    function GlobalVars() external view returns(address, uint, uint) {
+        address owner = msg.sender;
+        uint timestamp = block.timestamp;
+        uint BlockNum = block.number;
+        return( owner, timestamp, BlockNum );
+    }
+}
