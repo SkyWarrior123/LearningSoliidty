@@ -1,0 +1,32 @@
+// SPDX-License-Identifier: UNLICENSED
+
+pragma solidity ^ 0.8.8;
+
+contract Events {
+    string role;
+    uint public age;
+    address owner;
+
+    constructor() {
+        role = "Trainer";
+        age = 40;
+        owner = msg.sender;
+    }
+
+    event Changed(address a);
+
+    modifier onlyOwner {
+        require( msg.sender == owner);
+    _;}
+
+    function getRole() public view returns(string memory){
+        return role;
+        
+    }
+
+    function setRole(string memory w, uint  i) onlyOwner public {
+        role = w;
+        age = i;
+        emit Changed (msg.sender);
+    }
+}
