@@ -1,0 +1,25 @@
+// SPDX-License-Identifier: UNLICENSED
+
+pragma solidity ^0.8.8;
+
+contract Foo {
+    Calculator calc = new Calculator();
+
+    function fourTimessix() external view returns(uint) {
+        return calc.multiply(4,6);
+    }
+
+    function twoPluseight() external view  returns(uint) {
+        return calc.add(2,8);
+    }
+ }
+
+ contract Calculator {
+     function add(uint a, uint b) external pure returns(uint) {
+         return a + b;
+     }
+
+     function multiply(uint a, uint b) external pure returns(uint) {
+         return a * b;
+     }
+ }
