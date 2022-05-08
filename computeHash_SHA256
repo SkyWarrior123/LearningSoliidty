@@ -1,0 +1,15 @@
+// SPDX-License-Identifier: UNLICENSED
+
+pragma solidity ^0.8.8;
+
+contract computeHash_SHA256 {
+    uint hashDigits = 16;
+
+    uint hashModulus = 10 ** 16;
+
+    function _generateRandom(string memory _str) public view returns(uint) {
+        uint random = uint(sha256(abi.encodePacked(_str)));
+
+        return random % hashModulus;
+    }
+}
