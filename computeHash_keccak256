@@ -1,0 +1,16 @@
+// SPDX-License-Identifier: UNLICENSED
+
+pragma solidity ^0.8.8;
+
+contract computeHash_keccak256 {
+    uint hashDigits = 8;
+
+    uint hashModulus = 10 ** 8;
+
+    function _generateRandom (string memory _str ) public view returns (uint) {
+
+        uint random = uint(keccak256(abi.encodePacked(_str)));
+
+        return random % hashModulus;
+    }
+}
