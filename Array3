@@ -1,0 +1,30 @@
+// SPDX-License-Identifier: UNLICENSED
+
+pragma solidity ^0.8.8;
+
+contract Array3 {
+    uint[] MyArray;
+    uint[] MyArray2 = [1, 2, 3];
+    uint[10] MyFixedSizeArray;
+
+    function push(uint index, uint number) public {
+        MyFixedSizeArray[index] = number;
+    }
+
+    function pop() public {
+        uint i = MyFixedSizeArray.length - 1;
+        delete MyFixedSizeArray[i];
+    }
+
+    function getLength() public view returns(uint) {
+        return MyFixedSizeArray.length;
+    }
+
+    function getArray() public view returns( uint[10] memory) {
+        return MyFixedSizeArray;
+    }
+
+    function remove(uint index) public {
+        delete MyFixedSizeArray[index];
+    }
+}
